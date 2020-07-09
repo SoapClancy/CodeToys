@@ -1,7 +1,7 @@
 import copy
 import time
 from io import BytesIO
-from typing import Iterator, Union
+from typing import Iterable, Union
 
 import pygame
 from gtts import gTTS
@@ -16,7 +16,7 @@ Total number of circles of push up: 'total_circles'
 """
 
 
-def call_out(text: Iterator[str], repeat_times: int,
+def call_out(text: Iterable[str], repeat_times: int,
              minimum_seconds_per_call_out: Union[int, float] = 1):
     tts_obj_list = [gTTS(text=this_text) for this_text in text]
 
@@ -54,4 +54,4 @@ def do_push_up(up_duration_in_one_push_up_in_seconds: int = 7,
 
 
 if __name__ == '__main__':
-    do_push_up(total_circles=50)
+    do_push_up(total_circles=3)
