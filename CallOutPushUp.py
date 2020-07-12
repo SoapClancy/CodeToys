@@ -36,7 +36,7 @@ def call_out(text: Iterable[str], repeat_times: int,
         this_bytes_io_obj = BytesIO()
         this_tts_obj.write_to_fp(this_bytes_io_obj)
         this_bytes_io_obj.seek(0)
-        rank_of_circle.setdefault(int((i+1)*tts_obj_list_one.__len__()), this_bytes_io_obj)
+        rank_of_circle.setdefault(int((i + 1) * tts_obj_list_one.__len__()), this_bytes_io_obj)
 
     pygame.mixer.init()
     time_start = time.time()
@@ -67,7 +67,7 @@ def do_push_up(up_duration_in_one_push_up_in_seconds: int = 4,
                down_duration_in_one_push_up_in_seconds: int = 5,
                total_circles: int = 50):
     one_circle = [str(i) for i in range(1, up_duration_in_one_push_up_in_seconds + 1)] + \
-                 [str(i) for i in range(1, hold_on_duration_in_one_push_up_in_seconds + 1)] + \
+                 ['hold'] * hold_on_duration_in_one_push_up_in_seconds + \
                  [str(i) for i in range(down_duration_in_one_push_up_in_seconds, 0, -1)]
     call_out(one_circle, total_circles)
 
